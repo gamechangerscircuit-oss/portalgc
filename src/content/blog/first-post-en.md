@@ -21,7 +21,7 @@ Its removal likely reduces the presence of those faster, execution-heavy styles 
 ## The transition period is where the new meta begins
 
 Ongoing VALORANT tournaments are not played on the live patch immediately after release. As a result, the real impact of the patch will not appear during the ongoing playoffs, but rather in the transition period between Stage 2 and Stage 3.
-Between the end of Stage 2 and the start of the next Stage 3, smaller competitions such as the next Cash Cup became the first tournaments played on the new rotation.
+Between the end of Stage 2 and the start of the next Stage 3, smaller competitions such as the next Cash Cups became the first tournaments played on the new rotation.
 That transition period is often where early meta trends begin to emerge. Teams should start rebuilding their map pools around Ascent while simultaneously adapting to the absence of Bind for the first time in months.
 In practice, these events become the first real testing ground for new compositions, utility setups, and map priorities before the next official Stage begins.
 
