@@ -3,7 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, description } = Astro.props;
+const { title, description, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,8 +14,13 @@ const { title, description } = Astro.props;
     <body style="background-color: #0b0f19;">
         <Header />
 
-        <main>
-            <div class="prose">
+        <main>       
+			{heroImage && (
+				<div class="hero-image">
+					<img src={heroImage.src} alt="" />
+				</div>
+			)}
+			<div class="prose">
                 <h1 class="about-title">{title}</h1>
 
                 <hr />
@@ -57,5 +62,22 @@ const { title, description } = Astro.props;
 
             color: transparent;
         }
+		
+		.hero-image {
+			width: 100%;
+			margin-top: 1rem;
+		}
+
+		.hero-image img {
+			display: block;
+			margin: 0 auto;
+			border-radius: 12px;
+			max-width: 600px;			
+			box-shadow: 
+				
+				0 2px 25px rgba(255, 255, 255, 0.12),
+				0 5px 15px rgba(255, 255, 255, 0.2);
+		}
+
     </style>
 </html>
