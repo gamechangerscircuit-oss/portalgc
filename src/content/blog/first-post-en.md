@@ -2,7 +2,7 @@
 title: 'VALORANT Patch 12.08: Ascent returns, Bind leaves the rotation, and the meta shift is already beginning'
 description: 'Ascent returns to the competitive map pool while Bind exits the rotation ahead of the next Game Changers split'
 pubDate: 'May 09 2026'
-heroImage: '../../assets/MAP-ROTATION.png'
+heroImage: '../../assets/MAP-ROTATION.png';
 author: 'The GCCircuit Staff'
 lang: 'en'
 translation: 'Parche 12.08 de Valorant: Ascent regresa y Bind sale de la rotación, así impacta en Game Changers'

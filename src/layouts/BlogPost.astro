@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -14,17 +13,25 @@ const {
     pubDate,
     updatedDate,
     heroImage,
-	author,
+    author,
     background = '#0b0f19',
     showDate = true
 } = Astro.props;
+
+const resolvedHeroImage =
+  typeof heroImage === 'string'
+    ? heroImage
+    : heroImage?.src;
 ---
 
 <html lang="en">
     <head>
-        <BaseHead title={title}
-		description={description}
-		image={heroImage}/>
+        <BaseHead
+            title={title}
+            description={description}
+            image={resolvedHeroImage}
+        />
+
         <style>
             main {
                 width: calc(100% - 2em);
@@ -43,6 +50,7 @@ const {
                 margin: 0 auto;
                 border-radius: 12px;
                 box-shadow: var(--box-shadow);
+                max-width: 100%;
             }
 
             .prose {
@@ -60,13 +68,11 @@ const {
                 line-height: 1;
             }
 
-            /* 🔥 POST TITLE (sin gradiente) */
             .post-title {
                 margin: 0 0 0.5em 0;
                 color: var(--pink);
             }
 
-            /* ✨ ABOUT TITLE (con gradiente) */
             .about-title {
                 margin: 0 0 0.5em 0;
 
@@ -85,38 +91,29 @@ const {
             .date {
                 margin-bottom: 0.5em;
                 color: #f472b6;
-				opacity: 0.9;
-
-
+                opacity: 0.9;
             }
-			
-			.author {
-				margin-top: 1rem;
 
-				font-size: 0.5rem;
-				font-weight: 700;
-				letter-spacing: 0.02em;
+            .author {
+                margin-top: 1rem;
+                font-size: 0.5rem;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+                color: #f472b6;
+                text-transform: uppercase;
+            }
 
-				color: #f472b6;
-
-				text-transform: uppercase;
-			}
-			
             .last-updated-on {
                 font-style: italic;
             }
 
-            /* ✅ Subtítulos */
-			
-			.prose :global(h2) {
-				color: #f472b6;
-				margin-top: 2.2rem;
-				text-align: center;
-				padding-bottom: 0.4rem;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-			}
-
-
+            .prose :global(h2) {
+                color: #f472b6;
+                margin-top: 2.2rem;
+                text-align: center;
+                padding-bottom: 0.4rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
         </style>
     </head>
 
@@ -126,12 +123,12 @@ const {
         <main>
             <article>
                 <div class="hero-image">
-                    {heroImage && (
-                        <Image
-							src={heroImage}
-							alt=""
-							class="hero-img"
-						/>
+                    {resolvedHeroImage && (
+                        <img
+                            src={resolvedHeroImage}
+                            alt=""
+                            class="hero-img"
+                        />
                     )}
                 </div>
 
@@ -139,6 +136,7 @@ const {
                     <div class="title">
                         <div class="date">
                             <FormattedDate date={pubDate} />
+
                             {
                                 updatedDate && (
                                     <div class="last-updated-on">
@@ -151,12 +149,12 @@ const {
                         <h1 class={title === 'About Us' ? 'about-title' : 'post-title'}>
                             {title}
                         </h1>
-						
-						{author && (
-							<div class="author">
-								By {author}
-							</div>
-						)}
+
+                        {author && (
+                            <div class="author">
+                                By {author}
+                            </div>
+                        )}
 
                         <hr />
                     </div>
