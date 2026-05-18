@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
 
 const { title, description, heroImage } = Astro.props;
 ---
@@ -17,7 +18,7 @@ const { title, description, heroImage } = Astro.props;
         <main>       
 			{heroImage && (
 				<div class="hero-image">
-					<img src={heroImage.src} class="hero-img" />
+					<Image src={heroImage} class="hero-img" alt="The GC Circuit logo" />
 				</div>
 			)}
 			<div class="prose">
@@ -72,9 +73,9 @@ const { title, description, heroImage } = Astro.props;
 			display: block;
 			margin: 0 auto;
 			border-radius: 12px;
-			max-width: 600px;			
-			box-shadow: 
-				
+			max-width: 600px;
+			height: auto;
+			box-shadow:
 				0 2px 25px rgba(255, 255, 255, 0.12),
 				0 5px 15px rgba(255, 255, 255, 0.2);
 		}
