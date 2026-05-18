@@ -1,49 +1,30 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<Header />
+<PageLayout title="Contact" description="Contact The Game Changers Circuit">
+    <p>For inquiries, collaborations or feedback, please reach out to:</p>
 
-<main class="page-container" style="background-color:#0b0f19; min-height:80vh;">
-	<div class="content">
-		<h1>Contact</h1>
+    <p class="email">
+        gamechangerscircuit@gmail.com
+    </p>
+</PageLayout>
 
-		<p>For inquiries, collaborations or feedback, please reach out to:</p>
-
-		<p class="email">
-            gamechangerscircuit@gmail.com
-        </p>
-		</div>
-</main>
-
-<style>
-	.page-container {
-		background-color: #0b0f19;
-		min-height: 100vh;
-	}
-
-	.content {
-		max-width: 800px;
-		margin: auto;
-		padding: 2rem;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-		color: #cbd5e1;		
-		font-size: 1.5rem		
-	}
-	.content h1 {
-    font-size: 5rem;
-	line-height: 1.15;
-	margin: 0;
+<style is:global>
+.about-title {
+    font-size: 4.5rem;
+	line-height: 1.50;
+	margin: 0 0 0.5em 0;;
 	font-weight: 700;
 	letter-spacing: -0.04em;
 
 
 	background: linear-gradient(
-		90deg,
-		#ffffff 0%,
-		#FA037F 100%
+		9deg,
+		#ffffff 20%,
+		var(--pink-strong) 100%
 	);
+	
 
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -53,8 +34,7 @@ import Footer from '../components/Footer.astro';
 .email {
     margin-top: 1rem;
     color: #f472b6;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+}
 </style>
-
-
-<Footer />
+``

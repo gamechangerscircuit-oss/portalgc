@@ -5,7 +5,14 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		
+		<h2>
+			<a href="/" class="logo">
+				<img src="/logo.png" alt="logo" height="28" />
+				<span>{SITE_TITLE}</span>
+			</a>
+		</h2>
+
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/news">News</HeaderLink>
@@ -80,4 +87,33 @@ import HeaderLink from './HeaderLink.astro';
 			display: none;
 		}
 	}
+	
+header,
+header *,
+header a,
+header nav,
+header span {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 32px;   /* 👈 AQUÍ controlas el tamaño */
+    width: auto;
+    display: block;
+}
+
+.logo span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff4fd8;
+}
+``
+
 </style>
