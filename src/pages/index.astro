@@ -1,198 +1,108 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
+<PageLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 
-	<body>
-		<Header />
+	<!-- HERO -->
+	<section class="hero">				
+		<p class="subtitle">
+			Competitive coverage, analysis and stories from across the VALORANT Game Changers scene.
+		</p>
 
-		<main class="container">
-			<!-- HERO -->
-			<section class="hero">
-				<p class="tag">VALORANT GAME CHANGERS COVERAGE</p>
+		<div class="tags">
+			<span>Circuit Watch</span>
+			<span>Analysis</span>
+			<span>Rosters</span>
+			<span>Match Coverage</span>
+		</div>
+	</section>
 
-				<h1>The GAME CHANGERS Circuit</h1>
+	<!-- INTRO -->
+	<section class="intro-block">
+		<p class="intro">
+			Coverage and analysis from across the VALORANT Game Changers circuit,
+			focused on competitive results, roster movements and the evolution of
+			the scene.
+		</p>
 
-				<p class="subtitle">
-					Competitive coverage, analysis and stories from across the
-					VALORANT Game Changers scene.
-				</p>
-
-				<div class="tags">
-					<span>Circuit Watch</span>
-					<span>Analysis</span>
-					<span>Rosters</span>
-					<span>Match Coverage</span>
-				</div>
-			</section>
-
-			<!-- FEATURED / INTRO -->
-			<section class="intro-block">
-				<p class="intro">
-					Coverage and analysis from across the VALORANT Game Changers circuit,
-					focused on competitive results, roster movements and the evolution of
-					the scene.
-				</p>
-
-				<p>
-					Starting with GC EMEA — standings, playoffs, and the teams shaping one
-					of the most competitive regions — with future coverage expanding into
-					international events and the global GC ecosystem.
-				</p>
-			</section>
-		</main>
-
-		<Footer />
-	</body>
-</html>
+		<p>
+			Starting with GC EMEA — standings, playoffs, and the teams shaping one
+			of the most competitive regions — with future coverage expanding into
+			international events and the global GC ecosystem.
+		</p>
+	</section>
+</PageLayout>
 
 <style>
-	:global(body) {
-		margin: 0;
-		font-family: Inter, system-ui, "Apple Color Emoji", "Segoe UI Emoji",
-		"Noto Color Emoji", sans-serif;
-		background: #0b0f19;
-		color: var(--text);
-	}
 
-	.container {
-		max-width: 1100px;
-		margin: 0 auto;
-		padding: 4rem 1.5rem;
-	}
+/* HERO */
 
-	/* HERO */
-
-	.hero {
-		margin-bottom: 5rem;
-	}
-
-	.tag {
-		display: inline-block;
-		font-size: 0.75rem;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: #ff4fd8;
-		text-shadow: 0 0 6px rgba(250, 3, 127, 0.4);
-		margin-bottom: 1rem;
-	}
-
-	h1 {
-	font-size: 5rem;
-	line-height: 1;
-	margin: 0;
-	font-weight: 800;
-	letter-spacing: -0.04em;
-
-
-	background: linear-gradient(
-		90deg,
-		#ffffff 0%,
-		#FA037F 100%
-	);
-
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-
-	color: transparent;
+.hero {
+	  margin-top: 2.5rem;
+	  
 }
 
-	.subtitle {
-		margin-top: 1.5rem;
-		max-width: 700px;
-		font-size: 1.15rem;
-		line-height: 1.8;
-		color: #ff4fd8;
-	}
-
-	/* TAGS */
-
-	.tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75rem;
-		margin-top: 2rem;
-	}
-
-	.tags span {
-		background: rgba(255, 79, 216, 0.12);
-		border: 1px solid rgba(255, 79, 216, 0.35);
-		color: #ff4fd8;
-		padding: 0.45rem 0.9rem;
-		border-radius: 999px;
-		font-size: 0.85rem;
-		font-weight: 600;
-	}
-
-	/* LANGUAGE GRID */
-
-	.language-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.lang-card {
-		background: #121826;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 20px;
-		padding: 2rem;
-		transition: all 0.2s ease;
-	}
-
-	.lang-card:hover {
-		border-color: rgba(255, 79, 216, 0.45);
-		transform: translateY(-3px);
-	}
-
-	.lang-card h2 {
-	margin-top: 0;
-	margin-bottom: 1.25rem;
-
-	font-size: 1.4rem;
+.tag {
+	display: inline-block;
+	font-size: 0.75rem;
 	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #ff4fd8;
+	text-shadow: 0 0 6px rgba(250, 3, 127, 0.4);
+	margin-bottom: 1rem;
+}
 
-	color: #ffffff;
+.subtitle {
+	margin-top: 1rem;
+	max-width: 700px;
+	font-size: 1.15rem;
+	line-height: 1.8;
+	color: #ff4fd8;
+}
 
+/* TAGS */
+
+.tags {
 	display: flex;
-	align-items: center;
-	gap: 0.6rem;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.tags span {
+	background: rgba(255, 79, 216, 0.12);
+	border: 1px solid rgba(255, 79, 216, 0.35);
+	color: #ff4fd8;
+	padding: 0.45rem 0.9rem;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+/* INTRO */
+
+.intro-block {
+	margin-top: 3rem;
+}
+
+.intro {
+	line-height: 1.8;
+	color: #cbd5e1;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 2.75rem;
 	}
 
-	.lang-card p {
-		line-height: 1.8;
-		color: #cbd5e1;
+	.subtitle {
+		font-size: 1rem;
 	}
+}
 
-	.lang-card .intro {
-		font-size: 1.05rem;
-		font-weight: 600;
-		color: #f3f4f6;
-		margin-bottom: 1rem;
-	}
-
-	/* MOBILE */
-
-	@media (max-width: 768px) {
-		h1 {
-			font-size: 2.75rem;
-		}
-
-		.subtitle {
-			font-size: 1rem;
-		}
-
-		.container {
-			padding: 3rem 1.25rem;
-		}
-	}
 </style>
