@@ -71,10 +71,10 @@ const { title, description, heroImage } = Astro.props;
 
 		.hero-image img {
 			display: block;
-			margin: 0 auto;
-			border-radius: 12px;
-			max-width: 600px;
+			width: 100%;
 			height: auto;
+			object-fit: cover;
+			border-radius: 12px;
 			box-shadow:
 				0 2px 25px rgba(255, 255, 255, 0.12),
 				0 5px 15px rgba(255, 255, 255, 0.2);
